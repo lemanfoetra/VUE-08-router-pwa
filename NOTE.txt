@@ -1,4 +1,6 @@
 1. add router
 	'npm install --save vue-router'
 
-2. RouterLink, achor nya vue
+2. RouterLink, anchor nya vue
+3. Dynamic Segment
+4. 
