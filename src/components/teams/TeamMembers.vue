@@ -13,11 +13,13 @@ import UserItem from '../users/UserItem.vue';
 
 export default {
   inject: ['users', 'teams'],
+  props: ['teamId'],
+
   components: {
     UserItem
   },
   created() {
-    this.loadTeamMember();
+    this.loadTeamMember(this.teamId);
   },
   data() {
     return {
@@ -26,13 +28,13 @@ export default {
     };
   },
   watch: {
-    $route(newRoute) {
-      this.loadTeamMember(newRoute);
+    teamId(newTeamId) {
+      this.loadTeamMember(newTeamId);
     }
   },
   methods: {
-    loadTeamMember() {
-      const teamId = this.$route.params.teamId;
+    loadTeamMember(teamId) {
+      // const teamId = this.$route.params.teamId;
       const selectedTeam = this.teams.find(team => team.id === teamId);
       const members = selectedTeam.members;
       const selectedMember = [];

@@ -4,3 +4,4 @@
 2. RouterLink, anchor nya vue
 3. Dynamic Segment
 4. Navigation dinamic path using RouterLink :to
+5. Passing Param as Props
