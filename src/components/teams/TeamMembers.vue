@@ -20,6 +20,7 @@ export default {
   },
   created() {
     this.loadTeamMember(this.teamId);
+    console.log(this.$route.query);
   },
   data() {
     return {

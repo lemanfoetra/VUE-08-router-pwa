@@ -7,3 +7,4 @@
 5. Passing Param as Props
 6. Using Nested Route
 7. Using Named Routes
+8. Using Query Params
