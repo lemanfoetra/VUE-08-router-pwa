@@ -8,3 +8,4 @@
 6. Using Nested Route
 7. Using Named Routes
 8. Using Query Params
+9. Multiple Component in Route with RouterView Name
