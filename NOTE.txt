@@ -5,3 +5,4 @@
 3. Dynamic Segment
 4. Navigation dinamic path using RouterLink :to
 5. Passing Param as Props
+6. Using Nested Route
