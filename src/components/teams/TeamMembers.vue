@@ -4,6 +4,7 @@
     <ul>
       <user-item v-for="member in members" :key="member.id" :name="member.fullName" :role="member.role"></user-item>
     </ul>
+    <RouterLink to="/teams/t2">Go to team 2</RouterLink>
   </section>
 </template>
 
@@ -16,16 +17,7 @@ export default {
     UserItem
   },
   created() {
-    const teamId = this.$route.params.teamId;
-    const selectedTeam = this.teams.find(team => team.id === teamId);
-    const members = selectedTeam.members;
-    const selectedMember = [];
-    for (const member of members) {
-      const selecteduser = this.users.find(user => user.id === member);
-      selectedMember.push(selecteduser);
-    }
-    this.members = selectedMember;
-    this.teamName = selectedTeam.name;
+    this.loadTeamMember();
   },
   data() {
     return {
@@ -33,6 +25,25 @@ export default {
       members: [],
     };
   },
+  watch: {
+    $route(newRoute) {
+      this.loadTeamMember(newRoute);
+    }
+  },
+  methods: {
+    loadTeamMember() {
+      const teamId = this.$route.params.teamId;
+      const selectedTeam = this.teams.find(team => team.id === teamId);
+      const members = selectedTeam.members;
+      const selectedMember = [];
+      for (const member of members) {
+        const selecteduser = this.users.find(user => user.id === member);
+        selectedMember.push(selecteduser);
+      }
+      this.members = selectedMember;
+      this.teamName = selectedTeam.name;
+    }
+  }
 };
 </script>
 
