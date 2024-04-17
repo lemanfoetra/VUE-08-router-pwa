@@ -34,6 +34,13 @@ const router = createRouter({
             }
         },
     ],
+    scrollBehavior(to, from, savedPosition) {
+        console.log(to, from, savedPosition)
+        return {
+            left: 0,
+            top: 0,
+        }
+    },
 })
 
 const app = createApp(App)

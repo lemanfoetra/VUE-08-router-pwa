@@ -9,3 +9,4 @@
 7. Using Named Routes
 8. Using Query Params
 9. Multiple Component in Route with RouterView Name
+10. Controlling Scroll Behavior
