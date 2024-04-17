@@ -2,7 +2,7 @@
   <li>
     <h3>{{ name }}</h3>
     <div class="team-members">{{ memberCount }} Members</div>
-    <RouterLink :to="'/teams/' + teamId">View Members</RouterLink>
+    <RouterLink :to="to_MemberLink">View Members</RouterLink>
   </li>
 </template>
 
@@ -10,6 +10,11 @@
 
 export default {
   props: ['teamId', 'name', 'memberCount'],
+  computed: {
+    to_MemberLink() {
+      return { name: 'team-members', params: { teamId: this.teamId } }
+    }
+  },
 };
 </script>
 
