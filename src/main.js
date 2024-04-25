@@ -13,6 +13,10 @@ const router = createRouter({
         { path: '/', redirect: '/teams' },
         {
             path: '/teams',
+            beforeEnter(to, from, next) {
+                console.log('Guard yang menempel di route /teams');
+                next();
+            },
             components: {
                 default: TeamsList,
                 footer: TeamFooter,
@@ -34,14 +38,21 @@ const router = createRouter({
             }
         },
     ],
-    scrollBehavior(to, from, savedPosition) {
-        console.log(to, from, savedPosition)
+
+    scrollBehavior(_, _2, _3) {
+        // console.log(to, from, savedPosition)
         return {
             left: 0,
             top: 0,
         }
     },
 })
+
+router.beforeEach(function (to, from, next) {
+    console.log('Guard global')
+    // console.log(to, from);
+    next();
+});
 
 const app = createApp(App)
 

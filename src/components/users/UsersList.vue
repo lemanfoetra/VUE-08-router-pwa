@@ -18,6 +18,10 @@ export default {
       this.$router.push('/teams');
     }
   },
+  beforeRouteEnter(to, from, next) {
+    console.log('Guard di dalam komponen user')
+    next();
+  }
 };
 </script>
 
