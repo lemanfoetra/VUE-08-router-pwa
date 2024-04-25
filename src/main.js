@@ -54,6 +54,10 @@ router.beforeEach(function (to, from, next) {
     next();
 });
 
+router.afterEach(function (to, from) {
+    console.log('Guard after global')
+})
+
 const app = createApp(App)
 
 app.use(router);
