@@ -13,3 +13,4 @@
 11. "argsIgnorePattern": "^_",
 12. Navigation Guard
 13. beforeRouteEnter, fungsi yang akan di eksekusi ketika akan meninggalkan halaman
+14. route meta data 

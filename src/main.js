@@ -13,6 +13,7 @@ const router = createRouter({
         { path: '/', redirect: '/teams' },
         {
             path: '/teams',
+            meta: { needAuth: true },
             beforeEnter(to, from, next) {
                 console.log('Guard yang menempel di route /teams');
                 next();
