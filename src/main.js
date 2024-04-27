@@ -52,6 +52,9 @@ const router = createRouter({
 router.beforeEach(function (to, from, next) {
     console.log('Guard global')
     // console.log(to, from);
+    if (to.needAuth) {
+        // code something
+    }
     next();
 });
 
