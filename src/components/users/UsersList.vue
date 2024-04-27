@@ -21,6 +21,16 @@ export default {
   beforeRouteEnter(to, from, next) {
     console.log('Guard di dalam komponen user')
     next();
+  },
+  unmounted() {
+    console.log('unmounted');
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('before route leave')
+    const result = confirm('Anda yakin akan meninggalkan halaman ini?');
+    if (result) {
+      return next();
+    }
   }
 };
 </script>

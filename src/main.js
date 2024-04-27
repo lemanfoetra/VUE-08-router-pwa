@@ -54,7 +54,7 @@ router.beforeEach(function (to, from, next) {
     next();
 });
 
-router.afterEach(function (to, from) {
+router.afterEach(function (_, _2) {
     console.log('Guard after global')
 })
 
